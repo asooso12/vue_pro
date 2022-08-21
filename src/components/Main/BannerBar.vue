@@ -36,10 +36,10 @@ export default {
     textAnimation() {
       const phrases = [
         "Hyper Connected Network",
-        "IT 업무 관리 시스템",
+        "IT 업무 관리 시스템 ",
       ];
 
-      const el = document.querySelector(".my-text");
+      const el = document.querySelector(".my-texdt");
       const fx = new TextScramble(el);
 
       let counter = 0;
