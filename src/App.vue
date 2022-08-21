@@ -1,28 +1,45 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- NavBar -->
+    <NavBar />
+    <router-view />
+    <FooterBar />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavBar from "@/components/Main/NavBar.vue";
+import FooterBar from "@/components/Main/FooterBar.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    NavBar,
+    FooterBar,
+  },
+};
 </script>
 
 <style>
+@font-face {
+  font-family: "MinSans-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "MinSans-Regular";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  line-height: 1.4;
+}
+input {
+  box-sizing: initial;
+}
+* {
+  background-repeat: repeat !important;
 }
 </style>
