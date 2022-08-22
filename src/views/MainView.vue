@@ -13,41 +13,30 @@
         </div>
         <div class="card-section">
           <div class="menu-recommend-card">
-            <router-link :to="{ name: 'a' }">
-              <div>고객관리</div>
-              <span>나에게 꼭 맞는 식단을 추천해드립니다.</span>
-              <img src="../assets/recommend-card.svg" alt="" />
-            </router-link>
+              <div @click="searchSystem(1)">고객관리</div>
+              <span>고객관리</span>
           </div>
 
           <div class="menu-search-card">
-            <router-link :to="{ name: 'b'}">
-              <div>내부관리시스템</div>
+              <div @click="searchSystem(2)">내부관리시스템</div>
               <span>어떤 음식이든 검색해보세요!</span>
               <img src="../assets/search-card.svg" alt="" />
-            </router-link>
           </div>
 
           <div class="menu-record-card">
-            <router-link :to="{ name: 'c' }">
-              <div>대외지원시스템</div>
+              <div @click="searchSystem(3)">대외지원시스템</div>
               <span>내 기록을 남겨보세요.</span>
               <img src="../assets/record-card.svg" alt="" />
-            </router-link>
           </div>
           <div class="menu-record-card">
-            <router-link :to="{ name: 'c' }">
-              <div>인프라기획</div>
+              <div @click="searchSystem(4)">인프라기획</div>
               <span>내 기록을 남겨보세요.</span>
               <img src="../assets/record-card.svg" alt="" />
-            </router-link>
           </div>
           <div class="menu-record-card">
-            <router-link :to="{ name: 'c' }">
-              <div>정보보호</div>
-              <span>내 기록을 남겨보세요.</span>
+              <div @click="searchSystem(5)">정보보호</div>
+              <span>정보보호</span>
               <img src="../assets/record-card.svg" alt="" />
-            </router-link>
           </div>
         </div>
       </div>
@@ -58,12 +47,55 @@
 <script scoped>
 import BannerBar from "@/components/Main/BannerBar.vue";
 import SearchBar from "@/components/Main/SearchBar.vue"
+import axios from 'axios';
 
 export default {
   name: "MainView",
+  data() {
+    return {
+      taskData: {
+        system_no:0,
+        system_name:"",
+        system_category:"",
+        task_no:0,
+        task:"",
+        task_description:"",
+        manager_no:0,
+        manager_name:"",
+        manager_tel:"",
+        manager_duty:"나 이거데이터 어케하는지 몰라 ㅎㅎ;;; 이거 dto랑 연결되는건가,,,, 찐 몰라 (자랑아님)"
+      }
+    }
+  },
   components: {
     BannerBar,
     SearchBar
+  },
+  methods: {
+    searchSystem(key){
+      var searchSystem = '';
+      switch(key) {
+        case 1:
+          searchSystem = '고객관리';
+          break;
+        case 2:
+          searchSystem = '내부관리시스템';
+          break;
+        case 3:
+          searchSystem = '대외지원시스템';
+          break;
+        case 4:
+          searchSystem = '인프라 기획';
+          break;
+        case 5:
+          searchSystem = '정보보호';
+          break;
+      }
+      axios({
+        method: "get",
+        url :`http://localhost:8080/api/search/system/${searchSystem}`
+      })
+    }
   }
 };
 </script>

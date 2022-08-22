@@ -35,6 +35,7 @@
       </section> -->
 
       <!-- middle -->
+      <section class="middle-section">
       <section class="middle-section scroll-spy">
         <div class="inner">
           <img
@@ -79,6 +80,7 @@
             />
           </div>
         </div>
+      </section>
       </section>
 
       <!-- bottom -->
@@ -218,6 +220,11 @@ export default {
   position: relative;
   top: 10rem;
 }
+
+.middle-section {
+  background: linear-gradient(to top, #FDF7F1, #fff);
+}
+
 .middle-section .inner {
   position: relative;
   height: 40vh;
