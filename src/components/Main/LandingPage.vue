@@ -338,8 +338,8 @@ export default {
   height: 2.5vw;
 }
 
-.bottom-section scroll-search {
-  background-color: FDF7F1;
+.bottom-section.scroll-search {
+  background: #FDF7F1;
 }
 
 /*BACK TO POSITION*/
