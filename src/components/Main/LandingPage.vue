@@ -1,6 +1,6 @@
 <template>
   <div id="body">
-    <!-- 비회원일 때 랜딩 페이지 -->
+    <!-- 비회원일 때 랜딩 페이지  adsf-->
     <div id="logout" v-if="!isMain">
       <div id="to-top">
         <div class="material-icons arrow" @click="toTop">arrow_upward</div>
@@ -338,8 +338,8 @@ export default {
   height: 2.5vw;
 }
 
-.bottom-section scroll-search {
-  background-color: FDF7F1;
+.bottom-section.scroll-search {
+  background: #FDF7F1;
 }
 
 /*BACK TO POSITION*/

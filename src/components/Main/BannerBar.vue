@@ -38,7 +38,7 @@ export default {
         "IT 업무 관리 시스템",
       ];
 
-      const el = document.querySelector(".my-texdt");
+      const el = document.querySelector(".my-text");
       const fx = new TextScramble(el);
 
       let counter = 0;
