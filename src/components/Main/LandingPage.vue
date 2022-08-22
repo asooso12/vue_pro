@@ -5,35 +5,6 @@
       <div id="to-top">
         <div class="material-icons arrow" @click="toTop">arrow_upward</div>
       </div>
-      <!-- top -->
-      <!-- <section class="top-section">
-        <div class="inner">
-          <div class="text-group">
-            <div class="title">
-              <span class="di" style="color: #2bc0af">di</span>
-              <span class="e" style="color: #25ab9b">è</span>
-              <span class="te" style="color: #219285">te </span>
-              <b>시작하기</b>
-            </div>
-            <div class="description">
-              <b class="text-highlight">빅데이터</b>를 이용하여
-              <br />
-              <b>음식 추천 서비스</b>와 <b>맞춤형 식단관리 서비스</b>를
-              제공합니다.
-              <br />
-              또한, <b>건강한 식습관을 지향</b>하고 <br />
-              <b>사용자가 선호하는 음식을 추천</b>해드립니다.
-            </div>
-          </div>
-          <img src="../../assets/main_logout/main_landing.gif" alt="" />
-          <div class="scroll-container">
-            <div class="scroll-bar"></div>
-            <div class="scroll-bar"></div>
-            <div class="scroll-bar"></div>
-          </div>
-        </div>
-      </section> -->
-
       <!-- middle -->
       <section class="middle-section">
       <section class="middle-section scroll-spy">

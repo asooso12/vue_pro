@@ -15,6 +15,18 @@ export default {
   data() {
     return {
       keyword: null, // 검색키워드
+      taskData: {
+        system_no:0,
+        system_name:"",
+        system_category:"",
+        task_no:0,
+        task:"",
+        task_description:"",
+        manager_no:0,
+        manager_name:"",
+        manager_tel:"",
+        manager_duty:""
+      }
     }
   },
   methods: {
@@ -22,6 +34,10 @@ export default {
       axios({
         method: "get",
         url: `http://localhost:8080/api/search/word/${this.keyword}`
+      }).then((res) => {
+        console.log(res)
+      }).catch((err) => {
+        console.log(err)
       })
     }
   }

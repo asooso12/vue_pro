@@ -9,10 +9,13 @@
           class="bttn-stretch bttn-md bttn-danger login-btn"
           @click="goToLogin"
         >
-          업무등록
+          Home
         </button>
-        <button class="bttn-stretch bttn-md bttn-danger join-btn">
-          홈으로 이동
+        <button 
+        class="bttn-stretch bttn-md bttn-danger join-btn"
+        @click="searchTeam"
+        >
+          팀원보기
         </button>
       </div>
     </div>
@@ -22,6 +25,7 @@
 <script>
 import $ from "jquery";
 import { mapActions } from "vuex";
+import axios from 'axios';
 export default {
   name: "NavBar",
   data() {
@@ -29,6 +33,12 @@ export default {
       isRecord: false,
       isSearch: false,
       isMyPage: false,
+      teamData: {
+        manager_no:0,
+        manager_name:"",
+        manager_tel:"",
+        manager_duty:""
+      }
     };
   },
   methods: {
@@ -43,6 +53,18 @@ export default {
       this.$router.push({ name: "home" }).catch(() => {})
       window.location.reload()
       this.removeUserToken();
+    },
+    searchTeam() {
+      axios({
+        method: "get",
+        url: `http://localhost:8080/api/search/team`
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err)
+      })
     },
     // hover 시에 아이콘 > 글자 토글
     iconToggle(e) {

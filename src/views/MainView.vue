@@ -12,31 +12,28 @@
           시스템을 선택하여 검색해보세요!
         </div>
         <div class="card-section">
-          <div class="menu-recommend-card">
+          <div class="menu-customer-card">
               <div @click="searchSystem(1)">고객관리</div>
               <span>고객관리</span>
           </div>
 
-          <div class="menu-search-card">
+          <div class="menu-internal-system-card">
               <div @click="searchSystem(2)">내부관리시스템</div>
               <span>어떤 음식이든 검색해보세요!</span>
-              <img src="../assets/search-card.svg" alt="" />
           </div>
 
-          <div class="menu-record-card">
+          <div class="menu-system-card">
               <div @click="searchSystem(3)">대외지원시스템</div>
-              <span>내 기록을 남겨보세요.</span>
-              <img src="../assets/record-card.svg" alt="" />
+              <span>오쪼구조쪼구~</span>
+
           </div>
-          <div class="menu-record-card">
+          <div class="menu-infra-card">
               <div @click="searchSystem(4)">인프라기획</div>
-              <span>내 기록을 남겨보세요.</span>
-              <img src="../assets/record-card.svg" alt="" />
+              <span>오쪼구조쪼구~</span>
           </div>
-          <div class="menu-record-card">
+          <div class="menu-information-protection-card">
               <div @click="searchSystem(5)">정보보호</div>
               <span>정보보호</span>
-              <img src="../assets/record-card.svg" alt="" />
           </div>
         </div>
       </div>
@@ -63,7 +60,7 @@ export default {
         manager_no:0,
         manager_name:"",
         manager_tel:"",
-        manager_duty:"나 이거데이터 어케하는지 몰라 ㅎㅎ;;; 이거 dto랑 연결되는건가,,,, 찐 몰라 (자랑아님)"
+        manager_duty:""
       }
     }
   },
@@ -94,6 +91,10 @@ export default {
       axios({
         method: "get",
         url :`http://localhost:8080/api/search/system/${searchSystem}`
+      }).then((res) => {
+        console.log(res)
+      }).catch((err) => {
+        console.log(err)
       })
     }
   }
@@ -101,7 +102,6 @@ export default {
 </script>
 
 <style>
-/* Login 랜딩 페이지 */
 #login {
   margin: 0 5vw;
 }
@@ -139,15 +139,17 @@ a {
   font-weight: 700;
 }
 
-.card-section .menu-recommend-card,
-.card-section .menu-search-card,
-.card-section .menu-record-card {
+.card-section .menu-customer-card,
+.card-section .menu-internal-system-card,
+.card-section .menu-system-card,
+.card-section .menu-infra-card,
+.card-section .menu-information-protection-card {
   display: flex;
   flex-direction: column;
   padding: 0.5vw;
   margin: 0.3vw;
   width: 33vw;
-  height: 23vw;
+  height: 5vw;
   border: solid #414042 0.2vw;
   border-radius: 1vw;
   cursor: pointer;
