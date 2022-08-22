@@ -6,13 +6,13 @@
     <div class="menu">
       <div class="login-join">
         <button
-          class="bttn-unite bttn-md bttn-danger login-btn"
+          class="bttn-stretch bttn-md bttn-danger login-btn"
           @click="goToLogin"
         >
           업무등록
         </button>
-        <button class="bttn-unite bttn-md bttn-danger join-btn">
-          담당자등록
+        <button class="bttn-stretch bttn-md bttn-danger join-btn">
+          홈으로 이동
         </button>
       </div>
     </div>

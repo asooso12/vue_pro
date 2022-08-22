@@ -82,11 +82,11 @@
       </section>
 
       <!-- bottom -->
-      <section class="bottom-section scroll-spy">
+      <section class="bottom-section scroll-search">
         <div class="inner">
           <img
             class="bottom-bg"
-            src="../../assets/main_logout/walk.gif"
+            src="../../assets/hcn_landing.gif"
             alt=""
           />
           <div class="text-group">
@@ -151,7 +151,7 @@ export default {
 
 <style scoped>
 #logout{
-  background: linear-gradient(to top, #ffa6a1, #fff);
+  background: linear-gradient(to top, #FDF7F1, #fff);
 }
 #to-top {
   width: 3vw;
@@ -336,6 +336,10 @@ export default {
   font-size: 1vw;
   border-radius: 0.3vw;
   height: 2.5vw;
+}
+
+.bottom-section scroll-search {
+  background-color: FDF7F1;
 }
 
 /*BACK TO POSITION*/

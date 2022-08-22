@@ -3,16 +3,18 @@
     <BannerBar 
       :isHome="true"
     />
+    <SearchBar :isHom="true"
+    />
     <div id="login">
       <div class="main-section-login">
-        <div class="main-title">IT 관련 문의 검색</div>
+        <div class="main-title">IT 부서 지원 검색</div>
         <div class="main-sub-title">
-          김나린님, 오늘 하루도 건강하게 시작해보세요!
+          시스템을 선택하여 검색해보세요!
         </div>
         <div class="card-section">
           <div class="menu-recommend-card">
             <router-link :to="{ name: 'a' }">
-              <div>분류별 검색</div>
+              <div>고객관리</div>
               <span>나에게 꼭 맞는 식단을 추천해드립니다.</span>
               <img src="../assets/recommend-card.svg" alt="" />
             </router-link>
@@ -20,7 +22,7 @@
 
           <div class="menu-search-card">
             <router-link :to="{ name: 'b'}">
-              <div>담당자 검색</div>
+              <div>내부관리시스템</div>
               <span>어떤 음식이든 검색해보세요!</span>
               <img src="../assets/search-card.svg" alt="" />
             </router-link>
@@ -28,7 +30,21 @@
 
           <div class="menu-record-card">
             <router-link :to="{ name: 'c' }">
-              <div>업무 상세 검색해보세요</div>
+              <div>대외지원시스템</div>
+              <span>내 기록을 남겨보세요.</span>
+              <img src="../assets/record-card.svg" alt="" />
+            </router-link>
+          </div>
+          <div class="menu-record-card">
+            <router-link :to="{ name: 'c' }">
+              <div>인프라기획</div>
+              <span>내 기록을 남겨보세요.</span>
+              <img src="../assets/record-card.svg" alt="" />
+            </router-link>
+          </div>
+          <div class="menu-record-card">
+            <router-link :to="{ name: 'c' }">
+              <div>정보보호</div>
               <span>내 기록을 남겨보세요.</span>
               <img src="../assets/record-card.svg" alt="" />
             </router-link>
@@ -41,10 +57,13 @@
 
 <script scoped>
 import BannerBar from "@/components/Main/BannerBar.vue";
+import SearchBar from "@/components/Main/SearchBar.vue"
+
 export default {
   name: "MainView",
   components: {
     BannerBar,
+    SearchBar
   }
 };
 </script>
