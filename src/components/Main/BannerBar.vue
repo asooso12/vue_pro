@@ -8,9 +8,8 @@
             src="../../assets/HCN_CI_remove.png"
             alt=""
           />
-          <div class="my-text">diète</div>
+          <div class="my-text">IT 업무 관리 시스템</div>
           <div class="banner-sub-head">
-            <!-- <span>diète에서 맞춤형 음식을 추천받아보세요</span> -->
           </div>
         </div>
         <div v-else class="present-text">
@@ -36,7 +35,7 @@ export default {
     textAnimation() {
       const phrases = [
         "Hyper Connected Network",
-        "IT 업무 관리 시스템 ",
+        "IT 업무 관리 시스템",
       ];
 
       const el = document.querySelector(".my-texdt");
