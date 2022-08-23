@@ -26,7 +26,7 @@ export default {
         manager_name:"",
         manager_tel:"",
         manager_duty:""
-      }]
+      }],
     }
   },
   methods: {

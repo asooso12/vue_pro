@@ -3,9 +3,11 @@
     <!-- <BannerBar 
       :isHome="true"
     /> -->
-    <SearchBar :isHome="true"
+    <SearchBar 
+      :isHome="true"
+      @setInput="updateData"
     />
-    <div id="login" @setInput="setInput">
+    <div id="login">
       <div class="main-section-login">
         <div class="main-title">IT 부서 지원 검색</div>
         <div class="main-sub-title">
@@ -73,43 +75,37 @@ export default {
     SearchBar,
     TaskList
   },
-  mounted() {
-    axios({
-      method: "get",
-      url :`http://localhost:8000/api/search/system`
-    }).then((res) => {
-      console.log(res)
-      this.taskData = res.data
-    }).catch((err) => {
-      console.log(err)
-    })
-  },
   methods: {
-    setInput(taskData) {
-      this.taskData = taskData;
+    updateData(emitData){
+      this.taskData = emitData;
     },
+    // setInput(taskData) {
+    //   this.taskData = taskData;
+    // },
     searchSystem(key){
-      var searchSystem = '';
+      var searchSystemKeyword = '';
       switch(key) {
         case 1:
-          searchSystem = '고객관리';
+          searchSystemKeyword = '/고객관리';
           break;
         case 2:
-          searchSystem = '내부관리시스템';
+          searchSystemKeyword = '/내부관리시스템';
           break;
         case 3:
-          searchSystem = '대외지원시스템';
+          searchSystemKeyword = '/대외지원시스템';
           break;
         case 4:
-          searchSystem = '인프라 기획';
+          searchSystemKeyword = '/인프라 기획';
           break;
         case 5:
-          searchSystem = '정보보호';
+          searchSystemKeyword = '/정보보호';
+          break;
+        default:
           break;
       }
       axios({
         method: "get",
-        url :`http://localhost:8000/api/search/system/${searchSystem}`
+        url :`http://localhost:8000/api/search/system${searchSystemKeyword}`
       }).then((res) => {
         console.log(res)
         this.taskData = res.data
@@ -117,6 +113,9 @@ export default {
         console.log(err)
       })
     },
+  },
+  mounted() {
+    this.searchSystem()
   }
 };
 </script>
