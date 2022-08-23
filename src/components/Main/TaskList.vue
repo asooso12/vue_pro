@@ -6,31 +6,12 @@
       :headers="headers"
       :items="taskData"
       hide-default-footer
-      show-select
       :single-select="false"
       item-key="system_no"
+      :page.sync="page"
+      @page-count="pageCount = $event"
+      :items-per-page="10"
     >
-      <!-- 장바구니 삭제 -->
-      <template v-slot:top>
-        <v-toolbar flat>
-          <v-dialog v-model="dialogDelete" max-width="500px">
-            <v-card>
-              <v-card-title class="text-center"
-                >장바구니에서 삭제하시겠어요?</v-card-title
-              >
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn color="blue darken-1" text
-                  >삭제</v-btn
-                >
-                <v-btn color="blue darken-1" text
-                  >취소</v-btn
-                >
-              </v-card-actions>
-            </v-card>
-          </v-dialog>
-        </v-toolbar>
-      </template>
       <template v-slot:[`item.actions`]="{ item }">
         <v-icon small @click="deleteItem(item)" class="text-h4">
           mdi-delete
@@ -43,17 +24,10 @@
         </v-chip>
       </template>
     </v-data-table>
-    <div class="text-center pt-2">
-      <button
-        class="bttn-danger bttn-stretch mr-5 btn-save"
-        @click="saveMyMenus"
-      >
-      조회
-      </button>
-      <button class="bttn-danger bttn-stretch btn-save" @click="goToSearch">
-        버튼2
-      </button>
-    </div>
+    <v-pagination 
+    v-model="page" 
+    :length="pageCount"
+    ></v-pagination>
   </v-app>
 </template>
 
@@ -70,6 +44,9 @@ export default {
       sendData: {
         menus: [],
       },
+      page: 1,
+      pageCount: 5,
+      viewCount: 1,
       dialogDelete: false,
       selected: [],
       expanded: [],
@@ -86,8 +63,8 @@ export default {
         { text: "분류", align: "start", value: "system_category", sortable: true },
         { text: "시스템 업무", align: "start", value: "task", sortable: true },
         { text: "업무 상세 설명", align: "start", value: "task_description", sortable: true },
-        { text: "담당자", align: "end", value: "manager_name", sortable: true },
-        { text: "전화번호", align: "end", value: "manager_tel", sortable: true },
+        { text: "담당자", align: "start", value: "manager_name", sortable: true },
+        { text: "전화번호", align: "start", value: "manager_tel", sortable: true },
         { text: "근태", align: "end", value: "manager_duty", sortable: true },
         // {
         //   text: "시스템(업무)",
@@ -192,5 +169,9 @@ export default {
   font-size: 0.8vw;
   border-radius: 0.4vw;
   font-size: 1vw;
+}
+
+.elevation-1 {
+  margin-top: 2rem;
 }
 </style>

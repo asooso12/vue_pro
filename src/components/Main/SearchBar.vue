@@ -48,7 +48,7 @@ export default {
 
 <style scoped>
 .search-bar {
-  background: #78767a;
+  background: linear-gradient(to top, #78767a, rgb(187, 187, 187));;
   width: 100%;
   height: 10vh;
   display: flex;

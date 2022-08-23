@@ -7,7 +7,6 @@
       <div class="login-join">
         <button
           class="bttn-stretch bttn-md bttn-danger login-btn"
-          @click="goToLogin"
         >
           Home
         </button>
@@ -17,6 +16,7 @@
         >
           팀원보기
         </button>
+        <TeamModal :modalState="modalState" :teamData="teamData"/>
       </div>
     </div>
   </div>
@@ -25,46 +25,44 @@
 <script>
 import $ from "jquery";
 import { mapActions } from "vuex";
+import TeamModal from "@/components/Main/TeamModal.vue"
 import axios from 'axios';
+
 export default {
   name: "NavBar",
   data() {
     return {
-      isRecord: false,
-      isSearch: false,
-      isMyPage: false,
-      teamData: {
+      teamData: [{
         manager_no:0,
         manager_name:"",
         manager_tel:"",
-        manager_duty:""
-      }
+        manager_duty:"",
+      }],
+      modalState: false
     };
+  },
+  components :{
+    TeamModal
   },
   methods: {
     ...mapActions(["removeUserToken"]),
     goToHome() {
       this.$router.push({ name: "HomeView" }).catch(() => {});
     },
-    goToLogin() {
-      this.$router.push({ name: "login" }).catch(() => {});
-    },
-    goToLogout() {
-      this.$router.push({ name: "home" }).catch(() => {})
-      window.location.reload()
-      this.removeUserToken();
-    },
     searchTeam() {
       axios({
         method: "get",
-        url: `http://localhost:8080/api/search/team`
+        url: `http://localhost:8000/api/search/team`
       })
       .then((res) => {
         console.log(res);
+        this.modalState = !this.modalState;
+        this.teamData = res.data;
       })
       .catch((err) => {
         console.log(err)
-      })
+      }),
+      this.modalState = !this.modalState;
     },
     // hover 시에 아이콘 > 글자 토글
     iconToggle(e) {
@@ -101,8 +99,6 @@ export default {
           break;
       }
     },
-  },
-  computed: {
   },
 };
 </script>

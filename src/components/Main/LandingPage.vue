@@ -20,12 +20,12 @@
               src="../../assets/main_title1.png"
               alt=""
               class="title back-to-position to-left delay-1"
-            />
+            />담당자 검색 & 업무 상세 검색 서비스
             <img
               src="../../assets/main_description1.png"
               alt=""
               class="description back-to-position to-left delay-2"
-            />
+            />검색창에 담당자 이름이나 업무를 입력하여 빠르게 검색해보세요.
           </div>
         </div>
       </section>
@@ -142,7 +142,6 @@ export default {
   right: 1.5vw;
   
 }
-
 #to-top .arrow {
   font-size: 1.5vw;
 }
@@ -150,13 +149,11 @@ export default {
   background: linear-gradient(to top, #b7fef6 50%, transparent 50%);
 }
 /* Logout 랜딩 페이지 */
-
 /* .top-section {
   background-color: #fdfefe;
   height: 38vw;
   color: #333;
 }
-
 .top-section .inner {
   position: relative;
   display: flex;
@@ -166,7 +163,6 @@ export default {
   height: 30vw;
   margin: 0 auto;
 }
-
 .top-section .text-group .title {
   position: relative;
   font-size: 3vw;
@@ -185,17 +181,15 @@ export default {
   top: 1vw;
   z-index: 1;
 } */
-
 /* middle */
 .middle-section {
+  
   position: relative;
   top: 10rem;
 }
-
 .middle-section {
   background: linear-gradient(to top, #FDF7F1, #fff);
 }
-
 .middle-section .inner {
   position: relative;
   height: 40vh;
@@ -208,7 +202,6 @@ export default {
   width: 23vw;
   left: 3vw;
 }
-
 .middle-section .text-group {
   position: absolute;
   top: 3vw;
@@ -220,14 +213,12 @@ export default {
   width: 17vw;
   height: 5vw;
 }
-
 .middle-section .text-group .description {
   display: block;
   width: 31vw;
   height: 3.5vw;
   margin-left: 0.5vw;
 }
-
 /* middle-sction2 */
 .middle-section2 {
   /* background-image: url("../../assets/main_logout/main_bg.png"); */
@@ -246,30 +237,25 @@ export default {
   width: 23vw;
   right: -1vw;
 }
-
 .middle-section2 .text-group {
   position: absolute;
   top: 4vw;
   left: 4vw;
 }
-
 .middle-section2 .text-group .title {
   width: 14vw;
   height: 5vw;
 }
-
 .middle-section2 .text-group .description {
   display: block;
   width: 31vw;
   height: 3.5vw;
   margin-left: 0.3vw;
 }
-
 /* bottom */
 .bottom-section {
   height: 37vw;
 }
-
 .bottom-section .inner {
   position: relative;
   height: 34vw;
@@ -291,7 +277,6 @@ export default {
   position: relative;
   left: -9vw;
 }
-
 .bottom-section .text-group .title {
   margin-bottom: -2vw;
   position: relative;
@@ -299,7 +284,6 @@ export default {
   width: 17vw;
   height: 15vw;
 }
-
 .bottom-section .text-group .text {
   position: relative;
   width: 32vw;
@@ -315,11 +299,9 @@ export default {
   border-radius: 0.3vw;
   height: 2.5vw;
 }
-
 .bottom-section.scroll-search {
   background: #FDF7F1;
 }
-
 /*BACK TO POSITION*/
 .back-to-position {
   opacity: 0;
@@ -347,9 +329,6 @@ export default {
 .show .back-to-position.delay-3 {
   transition-delay: 0.9s;
 }
-
-
-
 /* Login 랜딩 페이지 */
 #login {
   margin: 0 5vw;
@@ -368,7 +347,6 @@ a {
   font-size: 1.3vw;
   margin-left: 0.5vw;
 }
-
 .card-section {
   display: flex;
   font-size: 1.8vw;
@@ -387,7 +365,6 @@ a {
   margin-top: 0.3vw;
   font-weight: 700;
 }
-
 .card-section .menu-recommend-card,
 .card-section .menu-search-card,
 .card-section .menu-record-card {
@@ -406,7 +383,6 @@ a {
 .card-section .menu-record-card a {
   position: relative;
 }
-
 .card-section .menu-search-card img,
 .card-section .menu-record-card img,
 .card-section .menu-recommend-card img {
@@ -418,7 +394,6 @@ a {
   max-height: 75%;
   object-fit: cover;
 }
-
 .scroll-bar {
   position: absolute;
   width: 3vw;
@@ -429,15 +404,12 @@ a {
   transform: scale3d(0.5, 0.5, 0.5);
   animation: move 3s ease-out infinite;
 }
-
 .scroll-bar:first-child {
   animation: move 3s ease-out 1s infinite;
 }
-
 .scroll-bar:nth-child(2) {
   animation: move 3s ease-out 2s infinite;
 }
-
 .scroll-bar:before,
 .scroll-bar:after {
   content: "";
@@ -447,18 +419,15 @@ a {
   width: 50%;
   background: #aaa;
 }
-
 .scroll-bar:before {
   left: 0;
   transform: skew(0deg, 30deg);
 }
-
 .scroll-bar:after {
   right: 0;
   width: 50%;
   transform: skew(0deg, -30deg);
 }
-
 @keyframes move {
   25% {
     opacity: 1;

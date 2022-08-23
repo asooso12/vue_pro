@@ -73,7 +73,7 @@ export default {
   components: {
     // BannerBar,
     SearchBar,
-    TaskList
+    TaskList,
   },
   methods: {
     updateData(emitData){
