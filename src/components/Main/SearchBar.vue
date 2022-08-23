@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       keyword: null, // 검색키워드
-      taskData: {
+      taskData: [{
         system_no:0,
         system_name:"",
         system_category:"",
@@ -26,7 +26,7 @@ export default {
         manager_name:"",
         manager_tel:"",
         manager_duty:""
-      }
+      }]
     }
   },
   methods: {
@@ -35,7 +35,9 @@ export default {
         method: "get",
         url: `http://localhost:8000/api/search/word/${this.keyword}`
       }).then((res) => {
-        console.log(res)
+        console.log(res);
+        this.taskData = res.data;
+        this.$emit("setInput", this.taskData);
       }).catch((err) => {
         console.log(err)
       })

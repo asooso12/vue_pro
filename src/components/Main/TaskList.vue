@@ -62,7 +62,7 @@ import axios from "axios";
 export default {
   name: "TaskList",
   props: {
-    taskData : Array
+    taskData : Array,
   },
   data() {
     return {
@@ -82,32 +82,19 @@ export default {
         protein: 0,
       },
       headers: [
-        { text: "분류", align: "end", value: "system_no", sortable: true },
-        { text: "분류", align: "end", value: "system_name", sortable: true },
-        { text: "분류", align: "end", value: "system_category", sortable: true },
-        { text: "분류", align: "end", value: "task_no", sortable: true },
-        { text: "분류", align: "end", value: "task", sortable: true },
-        { text: "분류", align: "end", value: "task_description", sortable: true },
-        { text: "분류", align: "end", value: "manager_no", sortable: true },
-        { text: "분류", align: "end", value: "manager_name", sortable: true },
-        { text: "분류", align: "end", value: "manager_tel", sortable: true },
-        { text: "분류", align: "end", value: "manager_duty", sortable: true },
+        { text: "대분류", align: "start", value: "system_name", sortable: true },
+        { text: "분류", align: "start", value: "system_category", sortable: true },
+        { text: "시스템 업무", align: "start", value: "task", sortable: true },
+        { text: "업무 상세 설명", align: "start", value: "task_description", sortable: true },
+        { text: "담당자", align: "end", value: "manager_name", sortable: true },
+        { text: "전화번호", align: "end", value: "manager_tel", sortable: true },
+        { text: "근태", align: "end", value: "manager_duty", sortable: true },
         // {
         //   text: "시스템(업무)",
         //   align: "end",
         //   value: "task",
         //   sortable: false,
         // },
-        // { text: "담당자", align: "end", value: "manager_name" },
-        // { text: "전화번호", align: "end", value: "manager_tel" },
-        // { text: "업무 상세 설명", align: "end", value: "task_description" },
-        // { text: "근태", align: "end", value: "protein" },
-        // 아니 있자나 내가 이걸 메인뷰에 컴포넌트로 쓰고싶은 거자나 그래서메인뷰에서 받아온 
-        // 데이터를 props? 머 부모한테 받는거래매 ㅠㅠ?? 여튼 받아오고 싶엇거든????
-        // 근데 이거를 저 뷰티파인지 먼지 저 표에 value를 머로 넣어??
-        // 아니면 템플릿에 items 저 이름 설정을 몰로해야 대는거야/????????
-        // 아니면 내가 지금 아예 안되는 짓ㅇ을 하고 있는건가?????????????
-        // 아니 스토어ㄹ를 써야대나 햇는데 안써도 되는거같은데 그치 , , 어케하는거야흑흑..
       ],
     };
   },

@@ -5,7 +5,7 @@
     /> -->
     <SearchBar :isHome="true"
     />
-    <div id="login">
+    <div id="login" @setInput="setInput">
       <div class="main-section-login">
         <div class="main-title">IT 부서 지원 검색</div>
         <div class="main-sub-title">
@@ -73,7 +73,21 @@ export default {
     SearchBar,
     TaskList
   },
+  mounted() {
+    axios({
+      method: "get",
+      url :`http://localhost:8000/api/search/system`
+    }).then((res) => {
+      console.log(res)
+      this.taskData = res.data
+    }).catch((err) => {
+      console.log(err)
+    })
+  },
   methods: {
+    setInput(taskData) {
+      this.taskData = taskData;
+    },
     searchSystem(key){
       var searchSystem = '';
       switch(key) {
@@ -102,7 +116,7 @@ export default {
       }).catch((err) => {
         console.log(err)
       })
-    }
+    },
   }
 };
 </script>

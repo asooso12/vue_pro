@@ -17,12 +17,12 @@
 
           <div class="text-group">
             <img
-              src="../../assets/main_logout/main_title1.png"
+              src="../../assets/main_title1.png"
               alt=""
               class="title back-to-position to-left delay-1"
             />
             <img
-              src="../../assets/main_logout/main_description1.png"
+              src="../../assets/main_description1.png"
               alt=""
               class="description back-to-position to-left delay-2"
             />
@@ -40,12 +40,12 @@
 
           <div class="text-group">
             <img
-              src="../../assets/main_logout/middle2_title.png"
+              src="../../assets/main_title2.png"
               alt=""
               class="title back-to-position to-left delay-1"
             />
             <img
-              src="../../assets/main_logout/middle2_text.png"
+              src="../../assets/main_description2.png"
               alt=""
               class="description back-to-position to-left delay-2"
             />
