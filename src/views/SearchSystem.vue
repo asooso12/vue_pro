@@ -52,6 +52,37 @@
           선택
         </button>
       </section>
+      <section id="dinner" @click="chooseMeal">
+        <h2>저녁</h2>
+        <img
+          :src="require('@/assets/menu_rec/dinner_img.svg')"
+          alt="예시이미지-저녁"
+          class="dinner-img"
+        />
+        <button
+          id="din-btn"
+          class="bttn-unite bttn-md bttn-success btn-group"
+          @click="chooseMeal"
+        >
+          선택
+        </button>
+      </section>
+      <section id="dinner" @click="chooseMeal">
+        <h2>저녁</h2>
+        <img
+          :src="require('@/assets/menu_rec/dinner_img.svg')"
+          alt="예시이미지-저녁"
+          class="dinner-img"
+        />
+        <button
+          id="din-btn"
+          class="bttn-unite bttn-md bttn-success btn-group"
+          @click="chooseMeal"
+        >
+          선택
+        </button>
+      </section>
+      
     </div>
     <button class="bttn-unite bttn-md bttn-success btn-group" @click="nextStep">
       추천받기

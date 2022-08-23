@@ -7,7 +7,7 @@
       :items="taskData"
       hide-default-footer
       :single-select="false"
-      item-key="system_no"
+      item-key="task_no"
       :page.sync="page"
       @page-count="pageCount = $event"
       :items-per-page="10"
@@ -18,9 +18,9 @@
         </v-icon>
       </template>
       <!-- 칼로리 숫자 색 -->
-      <template v-slot:[`item.foodKcal`]="{ item }">
-        <v-chip :color="getColor(item.foodKcal)" dark>
-          {{ item.foodKcal }}
+      <template v-slot:[`item.manager_duty`]="{ item }">
+        <v-chip :color="getColor(item.manager_duty)" dark>
+          {{ item.manager_duty }}
         </v-chip>
       </template>
     </v-data-table>
@@ -61,13 +61,13 @@ export default {
         protein: 0,
       },
       headers: [
-        { text: "대분류", align: "start", value: "system_name", sortable: true },
-        { text: "분류", align: "start", value: "system_category", sortable: true },
-        { text: "시스템 업무", align: "start", value: "task", sortable: true },
-        { text: "업무 상세 설명", align: "start", value: "task_description", sortable: true },
-        { text: "담당자", align: "start", value: "manager_name", sortable: true },
-        { text: "전화번호", align: "start", value: "manager_tel", sortable: true },
-        { text: "근태", align: "end", value: "manager_duty", sortable: true },
+        { text: "대분류", align: "start", value: "system_name", sortable: true, width: '10%'},
+        { text: "분류", align: "start", value: "system_category", sortable: true, width: '10%' },
+        { text: "시스템 업무", align: "start", value: "task", sortable: true, width: '15%' },
+        { text: "업무 상세 설명", align: "start", value: "task_description", sortable: true, width: '40%' },
+        { text: "담당자", align: "start", value: "manager_name", sortable: true,  width: '10%' },
+        { text: "전화번호", align: "start", value: "manager_tel", sortable: true ,  width: '10%'},
+        { text: "근태", align: "start", value: "manager_duty", sortable: true,  width: '5%' },
         // {
         //   text: "시스템(업무)",
         //   align: "end",
@@ -79,10 +79,9 @@ export default {
   },
   methods: {
     // 칼로리 위험도를 제공하기 위해 1회 당 500kcal이 넘는다면 위험, 300kcal이 넘는다면 경고, 300kcal 이하는 적합
-    getColor(calories) {
-      if (calories > 500) return "red";
-      else if (calories > 300) return "orange";
-      else return "green";
+    getColor(duty) {
+      if (duty == "근무") return "green";
+      else return "red";
     },
     // DB에 식단 저장
     saveMyMenus() {

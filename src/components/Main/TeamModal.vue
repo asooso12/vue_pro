@@ -2,69 +2,14 @@
   <div>
     <sweet-modal id="main-modal" ref="modals">
       <div class="modal">
-        <!-- <section class="food-modal-header">
-          <div class="food-modal-header-left">
-            <img
-              :src="`data:image/png;base64,${foodData.image}`"
-              alt="음식 사진"
-              class="modal-img"
-            />
-            <div class="food-modal-text">
-              <div class="food-modal-name">{{ foodData.foodName }}</div>
-              <div class="food-modal-kcal">{{ foodData.foodKcal }}kcal</div>
-              <div class="food-modal-g">
-                1회제공량: {{ foodData.servingSize }}g
-              </div>
-            </div>
-          </div>
-          <div id="my-chart">
-            <ApexChart
-              type="bar"
-              height="300"
-              :options="chartOptions"
-              :series="series"
-            ></ApexChart>
-          </div>
-        </section> -->
+        <section class="food-modal-header">
+        </section>
 
-        <!-- <section class="food-modal-bottom">
+        <section class="food-modal-bottom">
           <div class="inner">
             <div class="food-modal-bottom-text">다른 사용자들은 이런 음식도 먹었어요</div>
-
-            <swiper ref="mySwiper" :options="swiperOptions" class="my-swiper">
-              <swiper-slide
-                v-for="(subFood, idx) in subMenu"
-                :key="idx"
-                class="submenu"
-                :id="`${idx}`"
-              >
-                <img
-                  :src="`data:image/png;base64,${subFood.img}`"
-                  alt="음식예시사진"
-                  class="modal-bottom-img"
-                />
-                <div 
-                  class="modal-bottom-img-text"
-                >
-                  {{ subFood.foodName }}
-                </div>
-              </swiper-slide>
-            </swiper>
-            <div class="swiper-prev">
-              <span class="material-icons">arrow_back</span>
-            </div>
-            <div class="swiper-next">
-              <span class="material-icons">arrow_forward</span>
-            </div>
-            <button
-              class="bttn-unite bttn-md bttn-success pocket-btn"
-              @click="putInBasket"
-              v-show="!onlySearch"
-            >
-              장바구니에 담기
-            </button>
           </div>
-        </section> -->
+        </section>
       </div>
     </sweet-modal>
   </div>
@@ -73,7 +18,7 @@
 <script>
 import { mapActions } from "vuex";
 export default {
-  name: "SearchResultItem",
+  name: "TeamModal",
   props: {
     modalState: Boolean,
     teamData: Array,
@@ -81,65 +26,6 @@ export default {
   data() {
     return {
       subMenu: null,    // 추가메뉴
-      // swiper
-      swiperOptions: {
-        // loop: true,
-        observer: true,
-        observeParents: true,
-        slidesPerView: 4,
-        spaceBetween: 30,
-        setWrapperSize: true,
-        navigation: {
-          prevEl: ".swiper-prev",
-          nextEl: ".swiper-next",
-        },
-      },
-      // Apexchart,
-      series: [
-        {
-          name: "함량",
-          data: [
-            0, 0, 0, 0, 0,
-          ],
-        },
-      ],
-      chartOptions: {
-        chart: {
-          type: "bar",
-          height: 350,
-          width: 400,
-        },
-        plotOptions: {
-          bar: {
-            borderRadius: 4,
-            horizontal: true,
-            dataLabels: {
-              position: "top",
-            },
-          },
-        },
-        dataLabels: {
-          enabled: true,
-          offsetX: -10,
-          style: {
-            fontSize: "12px",
-            colors: ["#fff"],
-          },
-        },
-        xaxis: {
-          categories: ["탄수화물", "단백질", "지방", "당류", "총 포화지방산"],
-          title: {
-            text: "g (gram)",
-          },
-        },
-        tooltip: {
-          y: {
-            formatter: function (val) {
-              return `${val} g`;
-            },
-          },
-        },
-      },
       selectFlag: false,
       newData: null,
     };
@@ -159,6 +45,14 @@ export default {
       ];
     },
   },
+  watch: {
+    modalState() {
+      if (this.modalState){
+        this.showModal()
+        // console.log(this.$refs.modals.open(''))
+      }
+    }
+  }
 };
 </script>
 

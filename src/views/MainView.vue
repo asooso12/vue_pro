@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <!-- <BannerBar 
+    <BannerBar 
       :isHome="true"
-    /> -->
+    />
     <SearchBar 
       :isHome="true"
       @setInput="updateData"
@@ -14,27 +14,27 @@
           시스템을 선택하여 검색해보세요!
         </div>
         <div class="card-section">
-          <div class="menu-customer-card">
-              <div @click="searchSystem(1)">고객관리</div>
+          <div class="menu-customer-card" @click="searchSystem(1)">
+              <div>고객관리</div>
               <span>고객관리</span>
           </div>
 
-          <div class="menu-internal-system-card">
-              <div @click="searchSystem(2)">내부관리시스템</div>
+          <div class="menu-internal-system-card" @click="searchSystem(2)">
+              <div>내부관리시스템</div>
               <span>어떤 음식이든 검색해보세요!</span>
           </div>
 
-          <div class="menu-system-card">
-              <div @click="searchSystem(3)">대외지원시스템</div>
+          <div class="menu-system-card" @click="searchSystem(3)">
+              <div>대외지원시스템</div>
               <span>오쪼구조쪼구~</span>
 
           </div>
-          <div class="menu-infra-card">
-              <div @click="searchSystem(4)">인프라기획</div>
+          <div class="menu-infra-card" @click="searchSystem(4)">
+              <div>인프라기획</div>
               <span>오쪼구조쪼구~</span>
           </div>
-          <div class="menu-information-protection-card">
-              <div @click="searchSystem(5)">정보보호</div>
+          <div class="menu-information-protection-card" @click="searchSystem(5)">
+              <div>정보보호</div>
               <span>정보보호</span>
           </div>
         </div>
@@ -47,7 +47,7 @@
 </template>
 
 <script scoped>
-// import BannerBar from "@/components/Main/BannerBar.vue";
+import BannerBar from "@/components/Main/BannerBar.vue";
 import SearchBar from "@/components/Main/SearchBar.vue"
 import TaskList from "@/components/Main/TaskList.vue";
 import axios from 'axios';
@@ -71,7 +71,7 @@ export default {
     }
   },
   components: {
-    // BannerBar,
+    BannerBar,
     SearchBar,
     TaskList,
   },
@@ -165,7 +165,7 @@ a {
 .card-section .menu-information-protection-card {
   display: flex;
   flex-direction: column;
-  padding: 0.5vw;
+  /* padding: 0.5vw; */
   margin: 0.3vw;
   width: 33vw;
   height: 5vw;

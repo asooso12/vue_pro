@@ -7,6 +7,9 @@ import vuetify from './plugins/vuetify'
 Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
+import SweetModal from "sweet-modal-vue/src/plugin.js";
+Vue.use(SweetModal);
+
 new Vue({
   router,
   vuetify,

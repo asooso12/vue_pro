@@ -55,19 +55,25 @@ export default {
 
 /* footer */
 .footer-form {
-  height: 3vw;
-  margin-top: 3vw;
+  height: 10vw;
+  /* margin-top: 3vw; */
   background-color: #414042;
   display: flex;
-  justify-content: center;
-  padding: 3.5vw;
+  justify-content: space-around;
+  position: relative;
+  bottom: 0;
+  /* padding: 3.5vw; */
   color: #fff;
   line-height: 1.6;
+  width: 100%;
+  z-index: -1;
 }
 /* footer-left */
 .footer-form .left-area {
   width: 22vw;
-  position: relative;
+  position: absolute;
+  right: 50%;
+  display: block;
   top: 1.5vw;
   align-self: flex-end;
 }
@@ -86,22 +92,26 @@ export default {
 
 /* footer-right */
 .footer-form .right-area {
-  width: 22vw;
-  position: relative;
+  width: 50vw;
+  position: absolute;
   top: 1.5vw;
   align-self: flex-end;
+  display: block;
   display:flex;
   gap: 1rem;
+  left: 50%;
   font-size: 1.2rem;
+  line-height: 2.1;
 }
 .footer-form .right-area .right-title{
   font-weight: bold;
+  /* line-height: 2; */
 }
 
 .footer-form .right-area .tel,
 .footer-form .right-area .email,
 .footer-form .right-area .operating-time,
 .footer-form .right-area .footer-address {
-  font-size: 0.8vw;
+  font-size: 0.7vw;
 }
 </style>

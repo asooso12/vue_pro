@@ -16,16 +16,18 @@
           />
 
           <div class="text-group">
-            <img
+            <!-- <img
               src="../../assets/main_title1.png"
               alt=""
               class="title back-to-position to-left delay-1"
-            />담당자 검색 & 업무 상세 검색 서비스
-            <img
+            /> -->
+            <p>담당자 검색 & 업무 상세 검색 서비스</p>
+            <!-- <img
               src="../../assets/main_description1.png"
               alt=""
               class="description back-to-position to-left delay-2"
-            />검색창에 담당자 이름이나 업무를 입력하여 빠르게 검색해보세요.
+            /> -->
+            <p>검색창에 담당자 이름이나 업무를 입력하여 빠르게 검색해보세요.</p>
           </div>
         </div>
       </section>
@@ -54,6 +56,7 @@
       </section>
       </section>
 
+      </div>
       <!-- bottom -->
       <section class="bottom-section scroll-search">
         <div class="inner">
@@ -73,7 +76,6 @@
               alt=""
               class="text back-to-position to-right delay-1"
             />
-
             <div class="more back-to-position to-right delay-2">
               <button
                 class="bttn-unite bttn-md bttn-danger start-btn"
@@ -87,7 +89,6 @@
       </section>
 
 
-    </div>
 
   </div>
 </template>
@@ -129,7 +130,7 @@ export default {
 #to-top {
   width: 3vw;
   height: 3vw;
-  background-color: #25ab9b;
+  background-color: #ff0000 ;
   color: #fff;
   border: 0.1vw solid #fff;
   border-radius: 0.4vw;
@@ -140,7 +141,7 @@ export default {
   position: fixed;
   bottom: 1.5vw;
   right: 1.5vw;
-  
+  z-index: 9999;
 }
 #to-top .arrow {
   font-size: 1.5vw;
@@ -183,12 +184,11 @@ export default {
 } */
 /* middle */
 .middle-section {
-  
   position: relative;
   top: 10rem;
 }
 .middle-section {
-  background: linear-gradient(to top, #FDF7F1, #fff);
+  background: transparent;
 }
 .middle-section .inner {
   position: relative;
@@ -230,6 +230,7 @@ export default {
   width: 60vw;
   margin: 0 auto;
   top: 4vw;
+  background: transparent;
 }
 .middle-section2 .inner .my_page {
   display: block;
@@ -301,6 +302,7 @@ export default {
 }
 .bottom-section.scroll-search {
   background: #FDF7F1;
+  /* background: transparent; */
 }
 /*BACK TO POSITION*/
 .back-to-position {

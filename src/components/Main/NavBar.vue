@@ -23,10 +23,8 @@
 </template>
 
 <script>
-import $ from "jquery";
-import { mapActions } from "vuex";
 import TeamModal from "@/components/Main/TeamModal.vue"
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
   name: "NavBar",
@@ -45,59 +43,25 @@ export default {
     TeamModal
   },
   methods: {
-    ...mapActions(["removeUserToken"]),
     goToHome() {
       this.$router.push({ name: "HomeView" }).catch(() => {});
     },
     searchTeam() {
-      axios({
-        method: "get",
-        url: `http://localhost:8000/api/search/team`
-      })
-      .then((res) => {
-        console.log(res);
-        this.modalState = !this.modalState;
-        this.teamData = res.data;
-      })
-      .catch((err) => {
-        console.log(err)
-      }),
+      // axios({
+      //   method: "get",
+      //   url: `http://localhost:8000/api/search/team`
+      // })
+      // .then((res) => {
+      //   console.log(res);
+      //   this.teamData = res.data;
+      //   this.modalState = !this.modalState;
+      // })
+      // .catch((err) => {
+      //   console.log(err)
+      // })
+
+
       this.modalState = !this.modalState;
-    },
-    // hover 시에 아이콘 > 글자 토글
-    iconToggle(e) {
-      // target id 값 기준으로 1,2,3일때
-      switch (e.target.id) {
-        case "1":
-          // mouseover 이벤트가 발생하면
-          if (e.type == "mouseover") {
-            // innerText 변경, material-icons 클래스 삭제
-            $(".nav-food-rec").text("음식추천").removeClass("material-icons");
-          } else {
-            $(".nav-food-rec").text("restaurant").addClass("material-icons");
-          }
-          break;
-        case "2":
-          if (e.type == "mouseover") {
-            $(".nav-food-search")
-              .text("음식검색")
-              .removeClass("material-icons");
-          } else {
-            $(".nav-food-search").text("search").addClass("material-icons");
-          }
-          break;
-        case "3":
-          if (e.type == "mouseover") {
-            $(".nav-food-mypage")
-              .text("나의기록")
-              .removeClass("material-icons");
-          } else {
-            $(".nav-food-mypage").text("portrait").addClass("material-icons");
-          }
-          break;
-        default:
-          break;
-      }
     },
   },
 };
