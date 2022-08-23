@@ -10,7 +10,6 @@
 <script>
 import NavBar from "@/components/Main/NavBar.vue";
 import FooterBar from "@/components/Main/FooterBar.vue";
-
 export default {
   name: "App",
   components: {
@@ -28,8 +27,6 @@ export default {
   font-weight: normal;
   font-style: normal;
 }
-
-
 #app {
   font-family: "MinSans-Regular";
   -webkit-font-smoothing: antialiased;

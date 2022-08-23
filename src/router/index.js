@@ -13,6 +13,11 @@ const routes = [
     path: '/',
     name: 'MainView',
     component: () => import("@/views/MainView.vue"),
+  },
+  {
+    path: '/list',
+    name: "List",
+    component: () => import("@/components/Main/TaskList.vue")
   }
 ]
 

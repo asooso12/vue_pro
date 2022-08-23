@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <BannerBar 
+    <!-- <BannerBar 
       :isHome="true"
-    />
-    <SearchBar :isHom="true"
+    /> -->
+    <SearchBar :isHome="true"
     />
     <div id="login">
       <div class="main-section-login">
@@ -36,14 +36,16 @@
               <span>정보보호</span>
           </div>
         </div>
+        <TaskList />
       </div>
     </div>
   </div>
 </template>
 
 <script scoped>
-import BannerBar from "@/components/Main/BannerBar.vue";
+// import BannerBar from "@/components/Main/BannerBar.vue";
 import SearchBar from "@/components/Main/SearchBar.vue"
+import TaskList from "@/components/Main/TaskList.vue";
 import axios from 'axios';
 
 export default {
@@ -65,8 +67,9 @@ export default {
     }
   },
   components: {
-    BannerBar,
-    SearchBar
+    // BannerBar,
+    SearchBar,
+    TaskList
   },
   methods: {
     searchSystem(key){
@@ -90,7 +93,7 @@ export default {
       }
       axios({
         method: "get",
-        url :`http://localhost:8080/api/search/system/${searchSystem}`
+        url :`http://localhost:8000/api/search/system/${searchSystem}`
       }).then((res) => {
         console.log(res)
       }).catch((err) => {
@@ -228,5 +231,13 @@ a {
     opacity: 0;
     transform: translateY(4rem) scale3d(0.5, 0.5, 0.5);
   }
+}
+
+.btn-save {
+  margin-top: 1vw;
+  width: 11vw;
+  font-size: 0.8vw;
+  border-radius: 0.4vw;
+  font-size: 1vw;
 }
 </style>

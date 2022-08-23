@@ -33,7 +33,7 @@ export default {
     searchKeyword() {
       axios({
         method: "get",
-        url: `http://localhost:8080/api/search/word/${this.keyword}`
+        url: `http://localhost:8000/api/search/word/${this.keyword}`
       }).then((res) => {
         console.log(res)
       }).catch((err) => {

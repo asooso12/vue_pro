@@ -8,7 +8,6 @@
 <script>
 import BannerBar from "@/components/Main/BannerBar.vue";
 import MainDescription from "@/components/Main/LandingPage.vue"
-
 export default {
   name: "HomeView",
   components: {
@@ -16,9 +15,7 @@ export default {
     MainDescription,
   }
 }
-
 </script>
 
 <style>
-
 </style>
