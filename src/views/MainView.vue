@@ -36,7 +36,9 @@
               <span>정보보호</span>
           </div>
         </div>
-        <TaskList />
+        <TaskList 
+          :taskData="taskData"
+        />
       </div>
     </div>
   </div>
@@ -52,7 +54,7 @@ export default {
   name: "MainView",
   data() {
     return {
-      taskData: {
+      taskData: [{
         system_no:0,
         system_name:"",
         system_category:"",
@@ -63,7 +65,7 @@ export default {
         manager_name:"",
         manager_tel:"",
         manager_duty:""
-      }
+      },]
     }
   },
   components: {
@@ -96,6 +98,7 @@ export default {
         url :`http://localhost:8000/api/search/system/${searchSystem}`
       }).then((res) => {
         console.log(res)
+        this.taskData = res.data
       }).catch((err) => {
         console.log(err)
       })

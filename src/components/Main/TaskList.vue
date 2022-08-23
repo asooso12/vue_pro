@@ -8,7 +8,7 @@
       hide-default-footer
       show-select
       :single-select="false"
-      item-key="system_category"
+      item-key="system_no"
     >
       <!-- 장바구니 삭제 -->
       <template v-slot:top>
@@ -62,7 +62,7 @@ import axios from "axios";
 export default {
   name: "TaskList",
   props: {
-    taskData : Object
+    taskData : Array
   },
   data() {
     return {
@@ -82,7 +82,16 @@ export default {
         protein: 0,
       },
       headers: [
+        { text: "분류", align: "end", value: "system_no", sortable: true },
+        { text: "분류", align: "end", value: "system_name", sortable: true },
         { text: "분류", align: "end", value: "system_category", sortable: true },
+        { text: "분류", align: "end", value: "task_no", sortable: true },
+        { text: "분류", align: "end", value: "task", sortable: true },
+        { text: "분류", align: "end", value: "task_description", sortable: true },
+        { text: "분류", align: "end", value: "manager_no", sortable: true },
+        { text: "분류", align: "end", value: "manager_name", sortable: true },
+        { text: "분류", align: "end", value: "manager_tel", sortable: true },
+        { text: "분류", align: "end", value: "manager_duty", sortable: true },
         // {
         //   text: "시스템(업무)",
         //   align: "end",
