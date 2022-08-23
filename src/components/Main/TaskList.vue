@@ -46,7 +46,9 @@ export default {
       },
       page: 1,
       pageCount: 5,
-      viewCount: 1,
+      viewCount: 5,
+      //https://ayoteralab.tistory.com/entry/Vuejs-08-use-v-data-table 먼말임..
+      // https://luerangler-dev.tistory.com/23 중복키 머임...
       dialogDelete: false,
       selected: [],
       expanded: [],
