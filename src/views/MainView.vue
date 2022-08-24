@@ -13,19 +13,19 @@
         </div>
         <div>
         <ul class="category">
-          <li id="system_01" class="category-item category-item--current animate__animated animate__fadeInUp">
+          <li id="system_1" class="category-item category-item--current animate__animated animate__fadeInUp">
           <div class="category-link" @click="searchSystem(1)">고객관리</div>
           </li>
-          <li id="system_02" class="category-item category-item--current animate__animated animate__fadeInUp">
+          <li id="system_2" class="category-item category-item--current animate__animated animate__fadeInUp">
           <div class="category-link" @click="searchSystem(2)">내부관리시스템</div>
           </li>
-          <li id="system_03" class="category-item category-item--current animate__animated animate__fadeInUp">
+          <li id="system_3" class="category-item category-item--current animate__animated animate__fadeInUp">
           <div class="category-link" @click="searchSystem(3)">대외지원시스템</div>
           </li>
-          <li id="system_04" class="category-item category-item--current animate__animated animate__fadeInUp">
+          <li id="system_4" class="category-item category-item--current animate__animated animate__fadeInUp">
           <div class="category-link" @click="searchSystem(4)">인프라기획</div>
           </li>
-          <li id="system_05" class="category-item category-item--current animate__animated animate__fadeInUp">
+          <li id="system_5" class="category-item category-item--current animate__animated animate__fadeInUp">
           <div class="category-link" @click="searchSystem(5)">정보보호</div>
           </li>
         </ul>
@@ -59,7 +59,8 @@ export default {
         manager_name:"",
         manager_tel:"",
         manager_duty:""
-      },]
+      },],
+      selectedKey: 0,
     }
   },
   components: {
@@ -75,6 +76,16 @@ export default {
     //   this.taskData = taskData;
     // }, 내가 했던 emit.. 
     searchSystem(key){
+      const newSelectedCategory = document.querySelector(`#system_${key}`);
+      const nowSelectedCategory = document.querySelector(`#system_${this.selectedKey}`);
+      if (this.selectedKey == 0){
+        newSelectedCategory.classList.toggle('selected');
+      }
+      else if (this.selectedKey != key){
+        newSelectedCategory.classList.toggle('selected');
+        nowSelectedCategory.classList.toggle('selected');
+      }
+      this.selectedKey = key
       var searchSystemKeyword = '';
       switch(key) {
         case 1:
@@ -266,13 +277,22 @@ ul{
 
 .category-item--current .category-link {
   border-color: #414042;
-  box-shadow: inset 0 0 0 1px #aaa;
   color: #000000;
   font-weight: 700;
 }
 
 .category-item {
   width: 100%;
+  color: #000;
+  border-color: #000;
+}
+
+.category-item.selected{
+  z-index: 999;
+}
+.category-item.selected .category-link{
+  color: #ff0000;
+  border-color: #ff0000;
 }
 
 .category-item:first-child .category-link {
@@ -295,8 +315,8 @@ ul{
   width: calc(100% + 1px);
 }
 
-.category-link:hover {
+/* .category-link:hover {
   color: #ff0000;
-}
+} */
 
 </style>
