@@ -50,7 +50,7 @@
             src="../../assets/hcn_landing.gif"
             alt=""
           />
-          <div class="text-group">
+          <div class="bottom-section text-group">
             <p id="description3">서비스 이용에 관해</p>
             <p id="description3">무엇이든지 알려드립니다. </p>
             <button class="bttn-unite bttn-md bttn-danger start-btn" @click="pageToggle">IT팀 지원받기</button>
@@ -186,11 +186,12 @@ export default {
 
 .bottom-section .text-group {
   width: 26vw;
-  display: flex;
+  display: block;
   justify-content: flex-end;
   flex-wrap: wrap;
-  position: relative;
   left: 27vw;
+  position: absolute;
+  top: 7vw;
   text-align: center;
 }
 
@@ -203,7 +204,6 @@ export default {
   font-size: 1vw;
   border-radius: 0.3vw;
   height: 2.5vw;
-  align-self: center;
 }
 .bottom-section.scroll-search {
   background: #FDF7F1;
@@ -319,7 +319,6 @@ export default {
 
 #description3{
   margin: 1rem;
-  margin-top: 3px;
   font-size: 2rem;
   font-weight: 700;
   align-content: center;
