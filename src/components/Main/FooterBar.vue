@@ -13,23 +13,15 @@
         <div class="right-title">
           주소<br />
           대표 문의<br />
-          고객 센터<br />
+          일반 문의 <br />
           운영 시간<br />
         </div>
         <div class="right-content">
           서울시 서초구 반포대로 19<br />
-          1877 - 8000<br />
-          070-8109-1272<br />
+          070-8109-1299<br />
+          1877-8000<br />
           오전 9시 ~ 오후 6시 (주말 및 공휴일 휴무)<br />
         </div>
-        <!-- <div class="footer-address">
-          주소: 서울시 서초구 반포대로 19
-        </div>
-        <div class="email">대표 문의 1877 - 8000</div>
-        <div class="tel">고객센터 070-8109-1272 </div> -->
-        <!-- <div class="operating-time">
-          운영 시간: 오전 9시 ~ 오후 6시 (주말 및 공휴일 휴무)
-        </div> -->
       </section>
     </div>
   </section>

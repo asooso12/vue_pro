@@ -76,6 +76,10 @@ export default {
     },
     pageToggle() {
       this.$router.push({ name: 'MainView' }).catch(() => {})
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     },
     toTop() {
       window.scrollTo({

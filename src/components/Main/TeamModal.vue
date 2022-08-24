@@ -15,7 +15,7 @@
 
         <section class="food-modal-bottom">
           <div class="inner">
-            <div class="food-modal-bottom-text">test</div>
+            <div class="food-modal-bottom-text">시간 나면 바꾸기,,,,,,,,,,,,시간나면,,,,,,,,,,,,,,,,,,,,,,,,,,</div>
           </div>
         </section>
       </div>
@@ -40,15 +40,6 @@ export default {
   methods: {
     showModal() {
       this.$refs.modals.open("main-modal");
-    },
-    dataUpdate() {
-      this.series[0].data = [
-        { x: "탄수화물", y: this.foodData.carbohydrate },
-        { x: "단백질", y: this.foodData.protein },
-        { x: "지방", y: this.foodData.fat },
-        { x: "총 당류", y: this.foodData.sugar },
-        { x: "포화지방산", y: this.foodData.fattyAcid },
-      ];
     },
   },
   watch: {
