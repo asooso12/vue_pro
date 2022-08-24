@@ -115,10 +115,7 @@ export default {
     buttonChange(number){
       const newSelectedCategory = document.querySelector(`#system_${number}`);
       const nowSelectedCategory = document.querySelector(`#system_${this.selectedKey}`);
-      if (this.selectedKey == 0){
-        newSelectedCategory.classList.toggle('selected');
-      }
-      else if (this.selectedKey != number){
+      if (this.selectedKey != number){
         newSelectedCategory.classList.toggle('selected');
         nowSelectedCategory.classList.toggle('selected');
       }
