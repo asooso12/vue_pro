@@ -76,32 +76,27 @@ export default {
     //   this.taskData = taskData;
     // }, 내가 했던 emit.. 
     searchSystem(key){
-      const newSelectedCategory = document.querySelector(`#system_${key}`);
-      const nowSelectedCategory = document.querySelector(`#system_${this.selectedKey}`);
-      if (this.selectedKey == 0){
-        newSelectedCategory.classList.toggle('selected');
-      }
-      else if (this.selectedKey != key){
-        newSelectedCategory.classList.toggle('selected');
-        nowSelectedCategory.classList.toggle('selected');
-      }
-      this.selectedKey = key
       var searchSystemKeyword = '';
       switch(key) {
         case 1:
           searchSystemKeyword = '/고객관리';
+          this.buttonChange(key)
           break;
         case 2:
           searchSystemKeyword = '/내부관리시스템';
+          this.buttonChange(key)
           break;
         case 3:
           searchSystemKeyword = '/대외지원시스템';
+          this.buttonChange(key)
           break;
         case 4:
           searchSystemKeyword = '/인프라 기획';
+          this.buttonChange(key)
           break;
         case 5:
           searchSystemKeyword = '/정보보호';
+          this.buttonChange(key)
           break;
         default:
           break;
@@ -115,10 +110,22 @@ export default {
       }).catch((err) => {
         console.log(err)
       })
+      this.selectedKey = key
     },
+    buttonChange(number){
+      const newSelectedCategory = document.querySelector(`#system_${number}`);
+      const nowSelectedCategory = document.querySelector(`#system_${this.selectedKey}`);
+      if (this.selectedKey == 0){
+        newSelectedCategory.classList.toggle('selected');
+      }
+      else if (this.selectedKey != number){
+        newSelectedCategory.classList.toggle('selected');
+        nowSelectedCategory.classList.toggle('selected');
+      }
+    }
   },
   mounted() {
-    this.searchSystem()
+    this.searchSystem(0)
   }
 };
 </script>
