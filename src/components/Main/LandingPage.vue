@@ -10,24 +10,15 @@
       <section class="middle-section scroll-spy">
         <div class="inner">
           <img
-            src="../../assets/main_logout/recommend_page.png"
+            src="../../assets/picture1.png"
             alt=""
             class="recommend_page back-to-position to-right delay-0"
           />
 
           <div class="text-group">
-            <!-- <img
-              src="../../assets/main_title1.png"
-              alt=""
-              class="title back-to-position to-left delay-1"
-            /> -->
-            <p>담당자 검색 & 업무 상세 검색 서비스</p>
-            <!-- <img
-              src="../../assets/main_description1.png"
-              alt=""
-              class="description back-to-position to-left delay-2"
-            /> -->
-            <p>검색창에 담당자 이름이나 업무를 입력하여 빠르게 검색해보세요.</p>
+            <p id="title1">업무 분류별 검색</p>
+            <p id="description1">지원받을 시스템을 선택하고, 한눈에 확인하세요.</p>
+            <p id="system_category">고객관리 내부관리시스템 대외지원시스템 인프라기획 정보보호</p>
           </div>
         </div>
       </section>
@@ -35,22 +26,16 @@
       <section class="middle-section2 scroll-spy">
         <div class="inner">
           <img
-            src="../../assets/main_logout/my_page.png"
+            src="../../assets/picture2.png"
             alt=""
             class="my_page back-to-position to-right delay-0"
           />
 
           <div class="text-group">
-            <img
-              src="../../assets/main_title2.png"
-              alt=""
-              class="title back-to-position to-left delay-1"
-            />
-            <img
-              src="../../assets/main_description2.png"
-              alt=""
-              class="description back-to-position to-left delay-2"
-            />
+            <p id="title2">담당자 검색 & 업무 상세 검색 서비스</p>
+            <p id="description2">검색창에 담당자 이름이나
+            <p id="description2">업무의 상세 내용, 키워드를 검색하여
+            <p id="description2"> 빠르게 검색해보세요.</p>
           </div>
         </div>
       </section>
@@ -65,31 +50,20 @@
             src="../../assets/hcn_landing.gif"
             alt=""
           />
-          <div class="text-group">
-            <img
-              src="../../assets/main_logout/bottom_title_bold.png"
-              alt=""
-              class="title back-to-position to-right delay-0"
-            />
-            <img
-              src="../../assets/main_logout/bottom_description.png"
-              alt=""
-              class="text back-to-position to-right delay-1"
-            />
+          <div class="bottom-section text-group">
+            <p>여기 뭐쓰지~~~!!!~ 룰루랄라 고ㄷ점신ㅁ~~</p>
+            <button class="bttn-unite bttn-md bttn-danger start-btn" @click="pageToggle">오잉또잉</button>
             <div class="more back-to-position to-right delay-2">
               <button
                 class="bttn-unite bttn-md bttn-danger start-btn"
                 @click="pageToggle"
               >
-                시작하기
+                시작하기ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ얘는 어딧을까,,,,
               </button>
             </div>
           </div>
         </div>
       </section>
-
-
-
   </div>
 </template>
 
@@ -149,43 +123,10 @@ export default {
 .text-highlight {
   background: linear-gradient(to top, #b7fef6 50%, transparent 50%);
 }
-/* Logout 랜딩 페이지 */
-/* .top-section {
-  background-color: #fdfefe;
-  height: 38vw;
-  color: #333;
-}
-.top-section .inner {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 50vw;
-  height: 30vw;
-  margin: 0 auto;
-}
-.top-section .text-group .title {
-  position: relative;
-  font-size: 3vw;
-  font-weight: 700;
-  bottom: 2vw;
-}
-.top-section .inner img {
-  display: block;
-  position: absolute;
-  width: 35vw;
-  right: -16vw;
-}
-.top-section .text-group .description {
-  position: relative;
-  font-size: 1.5vw;
-  top: 1vw;
-  z-index: 1;
-} */
-/* middle */
+
 .middle-section {
   position: relative;
-  top: 10rem;
+  top: 5rem;
 }
 .middle-section {
   background: transparent;
@@ -208,16 +149,6 @@ export default {
   left: 30vw;
   width: 30vw;
   height: 8vw;
-}
-.middle-section .text-group .title {
-  width: 17vw;
-  height: 5vw;
-}
-.middle-section .text-group .description {
-  display: block;
-  width: 31vw;
-  height: 3.5vw;
-  margin-left: 0.5vw;
 }
 /* middle-sction2 */
 .middle-section2 {
@@ -268,7 +199,7 @@ export default {
   display: block;
   position: absolute;
   width: 42vw;
-  right: -8vw;
+  left: -13vw;
 }
 .bottom-section .text-group {
   width: 26vw;
@@ -276,7 +207,7 @@ export default {
   justify-content: flex-end;
   flex-wrap: wrap;
   position: relative;
-  left: -9vw;
+  right: -11vw;
 }
 .bottom-section .text-group .title {
   margin-bottom: -2vw;
@@ -331,71 +262,6 @@ export default {
 .show .back-to-position.delay-3 {
   transition-delay: 0.9s;
 }
-/* Login 랜딩 페이지 */
-#login {
-  margin: 0 5vw;
-}
-a {
-  width: 100%;
-  height: 100%;
-}
-.main-section-login .main-title {
-  font-size: 2vw;
-  font-weight: 700;
-  margin-top: 1.5vw;
-  margin-left: 0.5vw;
-}
-.main-section-login .main-sub-title {
-  font-size: 1.3vw;
-  margin-left: 0.5vw;
-}
-.card-section {
-  display: flex;
-  font-size: 1.8vw;
-  justify-items: center;
-  margin-top: 1vw;
-  color: #333;
-}
-.card-section span {
-  display: block;
-  font-size: 1vw;
-  margin-left: 1.2vw;
-  color: #333;
-}
-.card-section div {
-  margin-left: 1.1vw;
-  margin-top: 0.3vw;
-  font-weight: 700;
-}
-.card-section .menu-recommend-card,
-.card-section .menu-search-card,
-.card-section .menu-record-card {
-  display: flex;
-  flex-direction: column;
-  padding: 0.5vw;
-  margin: 0.3vw;
-  width: 33vw;
-  height: 23vw;
-  border: solid #25ab9b 0.2vw;
-  border-radius: 1vw;
-  cursor: pointer;
-}
-.card-section .menu-recommend-card a,
-.card-section .menu-search-card a,
-.card-section .menu-record-card a {
-  position: relative;
-}
-.card-section .menu-search-card img,
-.card-section .menu-record-card img,
-.card-section .menu-recommend-card img {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-  max-width: 100%;
-  max-height: 75%;
-  object-fit: cover;
-}
 .scroll-bar {
   position: absolute;
   width: 3vw;
@@ -446,5 +312,42 @@ a {
     opacity: 0;
     transform: translateY(4rem) scale3d(0.5, 0.5, 0.5);
   }
+}
+
+#title1 {
+  margin: 1rem;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+#title2 {
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+#system_category {
+  margin: 1rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+#description1{
+  margin: 1rem;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+#description2{
+  margin: 1rem;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.bottom-section .text-group {
+  position: absolute;
+  top: 3vw;
+  left: 30vw;
+  width: 30vw;
+  height: 8vw;
 }
 </style>

@@ -24,7 +24,7 @@
 
 <script>
 import TeamModal from "@/components/Main/TeamModal.vue"
-// import axios from 'axios';
+import axios from 'axios';
 
 export default {
   name: "NavBar",
@@ -47,21 +47,18 @@ export default {
       this.$router.push({ name: "HomeView" }).catch(() => {});
     },
     searchTeam() {
-      // axios({
-      //   method: "get",
-      //   url: `http://localhost:8000/api/search/team`
-      // })
-      // .then((res) => {
-      //   console.log(res);
-      //   this.teamData = res.data;
-      //   this.modalState = !this.modalState;
-      // })
-      // .catch((err) => {
-      //   console.log(err)
-      // })
-
-
-      this.modalState = !this.modalState;
+      axios({
+         method: "get",
+         url: `http://localhost:8000/api/search/team`
+       })
+       .then((res) => {
+         console.log(res);
+         this.teamData = res.data;
+         this.modalState = !this.modalState;
+       })
+       .catch((err) => {
+         console.log(err)
+       })
     },
   },
 };

@@ -175,4 +175,8 @@ export default {
 .elevation-1 {
   margin-top: 2rem;
 }
+
+.v-application--wrap {
+    min-height: 80vh;
+}
 </style>

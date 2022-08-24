@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-    <BannerBar 
-      :isHome="true"
-    />
+    <BannerBar :isHome="true"/>
     <SearchBar 
       :isHome="true"
       @setInput="updateData"
@@ -13,30 +11,24 @@
         <div class="main-sub-title">
           시스템을 선택하여 검색해보세요!
         </div>
-        <div class="card-section">
-          <div class="menu-customer-card" @click="searchSystem(1)">
-              <div>고객관리</div>
-              <span>고객관리</span>
-          </div>
-
-          <div class="menu-internal-system-card" @click="searchSystem(2)">
-              <div>내부관리시스템</div>
-              <span>어떤 음식이든 검색해보세요!</span>
-          </div>
-
-          <div class="menu-system-card" @click="searchSystem(3)">
-              <div>대외지원시스템</div>
-              <span>오쪼구조쪼구~</span>
-
-          </div>
-          <div class="menu-infra-card" @click="searchSystem(4)">
-              <div>인프라기획</div>
-              <span>오쪼구조쪼구~</span>
-          </div>
-          <div class="menu-information-protection-card" @click="searchSystem(5)">
-              <div>정보보호</div>
-              <span>정보보호</span>
-          </div>
+        <div>
+        <ul class="category">
+          <li id="system_01" class="category-item category-item--current animate__animated animate__fadeInUp">
+          <div class="category-link" @click="searchSystem(1)">고객관리</div>
+          </li>
+          <li id="system_02" class="category-item category-item--current animate__animated animate__fadeInUp">
+          <div class="category-link" @click="searchSystem(2)">내부관리시스템</div>
+          </li>
+          <li id="system_03" class="category-item category-item--current animate__animated animate__fadeInUp">
+          <div class="category-link" @click="searchSystem(3)">대외지원시스템</div>
+          </li>
+          <li id="system_04" class="category-item category-item--current animate__animated animate__fadeInUp">
+          <div class="category-link" @click="searchSystem(4)">인프라기획</div>
+          </li>
+          <li id="system_05" class="category-item category-item--current animate__animated animate__fadeInUp">
+          <div class="category-link" @click="searchSystem(5)">정보보호</div>
+          </li>
+        </ul>
         </div>
         <TaskList 
           :taskData="taskData"
@@ -81,7 +73,7 @@ export default {
     },
     // setInput(taskData) {
     //   this.taskData = taskData;
-    // },
+    // }, 내가 했던 emit.. 
     searchSystem(key){
       var searchSystemKeyword = '';
       switch(key) {
@@ -256,4 +248,55 @@ a {
   border-radius: 0.4vw;
   font-size: 1vw;
 }
+
+.category {
+  display: flex;
+  margin: 2vw auto 0vw;
+  width: 89vw;
+  cursor: pointer;
+}
+
+ul{
+  list-style: none;
+}
+
+.category-item--current {
+  z-index: 1;
+}
+
+.category-item--current .category-link {
+  border-color: #414042;
+  box-shadow: inset 0 0 0 1px #aaa;
+  color: #000000;
+  font-weight: 700;
+}
+
+.category-item {
+  width: 100%;
+}
+
+.category-item:first-child .category-link {
+  margin-left: 0;
+  width: 100%;
+}
+
+.category-link {
+  align-items: center;
+  border: 1px solid #e6e6e6;
+  box-sizing: border-box;
+  color: #999;
+  display: flex;
+  font-size: flex;
+  height: 6.24vh;
+  justify-content: center;
+  margin-left: -1px;
+  text-align: center;
+  transition: color 0.35s ease, box-shadow 0.35s ease;
+  width: calc(100% + 1px);
+}
+
+.category-link:hover {
+  color: #ff0000;
+}
+
 </style>

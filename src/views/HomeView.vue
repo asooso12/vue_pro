@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-    <BannerBar :isHome="true" />
+    <!-- <BannerBar :isHome="true" /> -->
     <MainDescription />
   </div>
 </template>
 
 <script>
-import BannerBar from "@/components/Main/BannerBar.vue";
+// import BannerBar from "@/components/Main/BannerBar.vue";
 import MainDescription from "@/components/Main/LandingPage.vue"
 export default {
   name: "HomeView",
   components: {
-    BannerBar,
+    // BannerBar,
     MainDescription,
   }
 }

@@ -7,7 +7,7 @@
 
         <section class="food-modal-bottom">
           <div class="inner">
-            <div class="food-modal-bottom-text">다른 사용자들은 이런 음식도 먹었어요</div>
+            <div class="food-modal-bottom-text">test</div>
           </div>
         </section>
       </div>
