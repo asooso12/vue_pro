@@ -12,15 +12,10 @@
       @page-count="pageCount = $event"
       :items-per-page="10"
     >
-      <template v-slot:[`item.actions`]="{ item }">
-        <v-icon small @click="deleteItem(item)" class="text-h4">
-          mdi-delete
-        </v-icon>
-      </template>
-      <!-- 칼로리 숫자 색 -->
-      <template v-slot:[`item.manager_duty`]="{ item }">
-        <v-chip :color="getColor(item.manager_duty)" dark>
-          {{ item.manager_duty }}
+      
+      <template v-slot:[`item.system_name`]="{ item }">
+        <v-chip :color="getColor(item.system_name)" dark>
+          {{ item.system_name }}
         </v-chip>
       </template>
     </v-data-table>
@@ -32,7 +27,6 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   name: "TaskList",
   props: {
@@ -47,8 +41,8 @@ export default {
       page: 1,
       pageCount: 5,
       viewCount: 5,
-      //https://ayoteralab.tistory.com/entry/Vuejs-08-use-v-data-table 먼말임..
-      // https://luerangler-dev.tistory.com/23 중복키 머임...
+      //https://ayoteralab.tistory.com/entry/Vuejs-08-use-v-data-table
+      // https://luerangler-dev.tistory.com/23
       dialogDelete: false,
       selected: [],
       expanded: [],
@@ -64,96 +58,21 @@ export default {
         { text: "대분류", align: "start", value: "system_name", sortable: true, width: '10%'},
         { text: "분류", align: "start", value: "system_category", sortable: true, width: '10%' },
         { text: "시스템 업무", align: "start", value: "task", sortable: true, width: '15%' },
-        { text: "업무 상세 설명", align: "start", value: "task_description", sortable: true, width: '40%' },
+        { text: "업무 상세 설명", align: "start", value: "task_description", sortable: true, width: '45%' },
         { text: "담당자", align: "start", value: "manager_name", sortable: true,  width: '10%' },
         { text: "전화번호", align: "start", value: "manager_tel", sortable: true ,  width: '10%'},
-        { text: "근태", align: "start", value: "manager_duty", sortable: true,  width: '5%' },
-        // {
-        //   text: "시스템(업무)",
-        //   align: "end",
-        //   value: "task",
-        //   sortable: false,
-        // },
       ],
     };
   },
   methods: {
-    // 칼로리 위험도를 제공하기 위해 1회 당 500kcal이 넘는다면 위험, 300kcal이 넘는다면 경고, 300kcal 이하는 적합
-    getColor(duty) {
-      if (duty == "근무") return "green";
+    getColor(system_name) {
+      if (system_name == "고객관리") return "#a2b5db";
+      else if(system_name == "내부관리시스템") return "#663e65";
+      else if(system_name == "대외지원시스템") return "#ba97a4";
+      else if(system_name == "인프라 기획") return "#786775";
+      else if(system_name == "정보보호") return "#97b2ba";
+
       else return "red";
-    },
-    // DB에 식단 저장
-    saveMyMenus() {
-      if (this.selected.length > 0){
-      this.selected.forEach((food) => {
-        this.sendData.menus.push({ foodId: food.id, amount: 1 });
-      });
-      this.sendData.dateTime = this.$store.state.targetDate;
-      this.sendData.mealTime = this.$store.state.mealTime;
-      this.sendData.username = this.userInfo.username;
-      axios({
-        method: "post",
-        url: `${process.env.VUE_APP_API_URL}/menu/basket/`,
-        data: this.sendData,
-        headers: {
-          Authorization: `JWT ${this.userToken}`,
-        },
-      })
-        .then((res) => {
-          // 이미 존재하는 식단일때 수정요청으로 재요청
-          if (res.data.menuid){
-            axios({
-              method: 'put',
-              url: `${process.env.VUE_APP_API_URL}/menu/basket/${res.data.menuid}/`,
-              data: this.sendData,
-              headers: {
-                Authorization : `JWT ${this.userToken}`
-              }
-            })
-              .then(() => {
-                this.$swal.fire({
-                  icon: "success",
-                  title: "식단이 수정되었습니다",
-                  text: "나의기록 페이지로 이동합니다.",
-                })
-                  .then(() => {
-                    this.menusUpdate([])
-                    this.$router.push({ name:'record' })
-                  })
-              })
-              .catch(err => {
-                console.log(err)
-              })
-          }
-          else{
-            this.$swal.fire({
-              icon: "success",
-              title: "식단에 저장되었습니다",
-              text: "나의기록 페이지로 이동합니다.",
-            }).then(()=> {
-              this.menusUpdate([])
-              this.$router.push({ name:'record' })
-            })
-          }
-          // 전역 장바구니 초기화
-        })
-        .catch((err) => {
-          this.$swal.fire({
-            icon: "error",
-            title: "식단에 저장하지 못했습니다",
-            text: "장바구니를 다시 확인해주세요.",
-          });
-          console.log(err);
-        });
-      }
-      else {
-        this.$swal.fire({
-            icon: "error",
-            title: "식단에 저장하지 못했습니다",
-            text: "식단에 저장할 음식을 선택해주세요.",
-          });
-      }
     },
     // router
     goToSearch() {

@@ -7,14 +7,14 @@
       <div class="login-join">
         <button
           class="bttn-stretch bttn-md bttn-danger login-btn"
-        >
-          Home
+        @click="goToHome">
+        <p id="nav-text">Home</p>
         </button>
         <button 
         class="bttn-stretch bttn-md bttn-danger join-btn"
         @click="searchTeam"
         >
-          팀원보기
+        <p id="nav-text">팀원조회</p>
         </button>
         <TeamModal :modalState="modalState" :teamData="teamData"/>
       </div>
@@ -71,6 +71,7 @@ export default {
   font-weight: normal;
   font-style: normal;
 }
+
 .hcn {
   font-size: 1.1rem
 }
@@ -115,6 +116,7 @@ a {
   border-radius: 0.4vw;
   margin-right: 2vw;
   font-size: 0.8vw;
+  font-weight: 400;
   height: 100%;
   width: 5vw;
 }
@@ -122,36 +124,8 @@ a {
 .bttn-unite.bttn-success:before {
   background: #25ab9b;
 }
-.nav .menu .menu-items {
+
+#nav-text {
   font-weight: 700;
-  display: flex;
-  align-items: center;
-}
-
-.nav .menu .menu-items a {
-  font-size: 0.8vw;
-  margin-right: 2vw;
-}
-
-.nav .menu .menu-items .logout-btn {
-  font-size: 0.8vw;
-  width: 5vw;
-  height: 100%;
-  border-radius: 0.4vw;
-}
-
-.nav-food-rec,
-.nav-food-search,
-.nav-food-mypage {
-  font-size: 1vw;
-  color: #333;
-  vertical-align: -webkit-baseline-middle;
-}
-.nav-food-rec.material-icons,
-.nav-food-search.material-icons,
-.nav-food-mypage.material-icons {
-  font-size: 1.5vw;
-  color: #333;
-  vertical-align: -webkit-baseline-middle;
 }
 </style>

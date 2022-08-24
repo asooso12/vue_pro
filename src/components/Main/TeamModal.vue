@@ -1,8 +1,16 @@
 <template>
   <div>
-    <sweet-modal id="main-modal" ref="modals">
+    <sweet-modal title="HCN IT TEAM" width="30%" id="main-modal" ref="modals" modal-theme="dark" overlay-theme="light">
       <div class="modal">
+        <!-- https://albertotorre.github.io/sweet-modal-vue-evolution/ -->
         <section class="food-modal-header">
+          <div class="menu-internal-system-card">
+              <ul v-for="(idx) in teamData"
+              :key="idx.no">
+              <li> {{idx.manager_name}}  </li>
+              <li> tel.{{idx.manager_tel}}</li>
+              </ul>
+          </div>
         </section>
 
         <section class="food-modal-bottom">
@@ -16,7 +24,6 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
 export default {
   name: "TeamModal",
   props: {
@@ -31,7 +38,6 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["myMenuUpdate"]),
     showModal() {
       this.$refs.modals.open("main-modal");
     },
@@ -49,7 +55,6 @@ export default {
     modalState() {
       if (this.modalState){
         this.showModal()
-        // console.log(this.$refs.modals.open(''))
       }
     }
   }
@@ -58,8 +63,9 @@ export default {
 
 <style>
 .sweet-modal {
-  max-width: 60vw;
+  max-width: 100vw;
   overflow-x: hidden;
+  width: 200vw;
 }
 
 .food-modal-text {
@@ -220,5 +226,54 @@ export default {
   z-index: 1;
   color: #fff;
   font-size: 0.7vw;
+}
+.card-section {
+  display: flex;
+  font-size: 1.8vw;
+  justify-items: center;
+  margin-top: 1vw;
+  color: #333;
+}
+.card-section span {
+  display: block;
+  font-size: 1vw;
+  margin-left: 1.2vw;
+  color: #333;
+}
+.card-section div {
+  margin-left: 1.1vw;
+  margin-top: 0.3vw;
+  font-weight: 700;
+}
+.card-section .menu-customer-card,
+.card-section .menu-internal-system-card,
+.card-section .menu-system-card,
+.card-section .menu-infra-card,
+.card-section .menu-information-protection-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5vw;
+  margin: 0.3vw;
+  width: 33vw;
+  height: 5vw;
+  border: solid #414042 0.2vw;
+  border-radius: 1vw;
+  cursor: pointer;
+}
+.card-section .menu-recommend-card a,
+.card-section .menu-search-card a,
+.card-section .menu-record-card a {
+  position: relative;
+}
+.card-section .menu-search-card img,
+.card-section .menu-record-card img,
+.card-section .menu-recommend-card img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  max-width: 100%;
+  max-height: 75%;
+  object-fit: cover;
 }
 </style>

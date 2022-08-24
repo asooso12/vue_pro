@@ -50,17 +50,10 @@
             src="../../assets/hcn_landing.gif"
             alt=""
           />
-          <div class="bottom-section text-group">
-            <p>여기 뭐쓰지~~~!!!~ 룰루랄라 고ㄷ점신ㅁ~~</p>
-            <button class="bttn-unite bttn-md bttn-danger start-btn" @click="pageToggle">오잉또잉</button>
-            <div class="more back-to-position to-right delay-2">
-              <button
-                class="bttn-unite bttn-md bttn-danger start-btn"
-                @click="pageToggle"
-              >
-                시작하기ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ얘는 어딧을까,,,,
-              </button>
-            </div>
+          <div class="text-group">
+            <p id="description3">서비스 이용에 관해</p>
+            <p id="description3">무엇이든지 알려드립니다. </p>
+            <button class="bttn-unite bttn-md bttn-danger start-btn" @click="pageToggle">IT팀 지원받기</button>
           </div>
         </div>
       </section>
@@ -127,10 +120,9 @@ export default {
 .middle-section {
   position: relative;
   top: 5rem;
-}
-.middle-section {
   background: transparent;
 }
+
 .middle-section .inner {
   position: relative;
   height: 40vh;
@@ -152,7 +144,6 @@ export default {
 }
 /* middle-sction2 */
 .middle-section2 {
-  /* background-image: url("../../assets/main_logout/main_bg.png"); */
   height: 100%;
 }
 .middle-section2 .inner {
@@ -174,16 +165,7 @@ export default {
   top: 4vw;
   left: 4vw;
 }
-.middle-section2 .text-group .title {
-  width: 14vw;
-  height: 5vw;
-}
-.middle-section2 .text-group .description {
-  display: block;
-  width: 31vw;
-  height: 3.5vw;
-  margin-left: 0.3vw;
-}
+
 /* bottom */
 .bottom-section {
   height: 37vw;
@@ -201,26 +183,17 @@ export default {
   width: 42vw;
   left: -13vw;
 }
+
 .bottom-section .text-group {
   width: 26vw;
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
   position: relative;
-  right: -11vw;
+  left: 27vw;
+  text-align: center;
 }
-.bottom-section .text-group .title {
-  margin-bottom: -2vw;
-  position: relative;
-  left: 1vw;
-  width: 17vw;
-  height: 15vw;
-}
-.bottom-section .text-group .text {
-  position: relative;
-  width: 32vw;
-  height: 16vw;
-}
+
 .bottom-section .start-btn {
   margin-top: 1vw;
   margin-right: 1vw;
@@ -230,6 +203,7 @@ export default {
   font-size: 1vw;
   border-radius: 0.3vw;
   height: 2.5vw;
+  align-self: center;
 }
 .bottom-section.scroll-search {
   background: #FDF7F1;
@@ -343,11 +317,12 @@ export default {
   font-size: 1.3rem;
 }
 
-.bottom-section .text-group {
-  position: absolute;
-  top: 3vw;
-  left: 30vw;
-  width: 30vw;
-  height: 8vw;
+#description3{
+  margin: 1rem;
+  margin-top: 3px;
+  font-size: 2rem;
+  font-weight: 700;
+  align-content: center;
 }
+
 </style>
