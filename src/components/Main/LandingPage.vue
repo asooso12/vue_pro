@@ -33,8 +33,8 @@
 
           <div class="text-group">
             <p id="title2">담당자 검색 & 업무 상세 검색 서비스</p>
-            <p id="description2">검색창에 담당자 이름이나
-            <p id="description2">업무의 상세 내용, 키워드를 검색하여
+            <p id="description2">검색창에 담당자 이름이나</p>
+            <p id="description2">업무의 상세 내용, 키워드를 검색하여</p>
             <p id="description2"> 빠르게 검색해보세요.</p>
           </div>
         </div>
